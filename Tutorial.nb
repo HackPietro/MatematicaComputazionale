@@ -1,0 +1,84 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2728,         76]
+NotebookOptionsPosition[      1740,         50]
+NotebookOutlinePosition[      2391,         71]
+CellTagsIndexPosition[      2348,         68]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.9853649732082024`*^9, 3.98536508446332*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"b6f43e64-afdc-624d-91dd-09237a92d29f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.9853432648351974`*^9, 3.985343309519953*^9}, {
+  3.985363512363306*^9, 3.9853635142480392`*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"120e9a67-f117-5442-b999-1c03b753ba0f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<RuffiniPackage.wl\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.985343353914692*^9, 3.985343370994417*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31"],
+
+Cell[BoxData[
+ RowBox[{"generateInterface", "[", "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.985343372904125*^9, 3.985343386995579*^9}, {
+  3.985345117819847*^9, 3.9853451208671913`*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e"]
+},
+WindowSize->{1069, 641},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules->{"DeleteOutputOnSave" -> True},
+FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]]}, Visible -> False, 
+  FrontEndVersion -> "14.3 for Microsoft Windows (64-bit) (July 8, 2025)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a8bc346e-7acc-3043-9150-35554a4551f0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 267, 5, 44, "Input",ExpressionUUID->"b6f43e64-afdc-624d-91dd-09237a92d29f",
+ InitializationCell->True],
+Cell[824, 27, 348, 7, 44, "Input",ExpressionUUID->"120e9a67-f117-5442-b999-1c03b753ba0f",
+ InitializationCell->True],
+Cell[1175, 36, 270, 5, 44, "Input",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31",
+ InitializationCell->True],
+Cell[1448, 43, 288, 5, 44, "Input",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e",
+ InitializationCell->True]
+}
+]
+*)
+
