@@ -96,7 +96,7 @@
 (*          *)
 (*          (*Caso 5 : la radice \[EGrave] sbagliata *)*)
 (*          True, *)
-(*          feedbackMessage = Style["La radice non \[EGrave] corretta ", Red, 16, Bold]*)
+(*          (inputErrorMessage = ""; feedbackMessage = Style["La radice non \[EGrave] corretta ", Red, 16, Bold])*)
 (*        ], Method -> "Queued", ImageSize -> {150, 40}, Appearance -> "FramedPalette"*)
 (*      ]*)
 (*    }],*)
