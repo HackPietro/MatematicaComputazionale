@@ -10,20 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      2728,         76]
-NotebookOptionsPosition[      1740,         50]
-NotebookOutlinePosition[      2391,         71]
-CellTagsIndexPosition[      2348,         68]
+NotebookDataLength[     10623,        261]
+NotebookOptionsPosition[      9532,        233]
+NotebookOutlinePosition[     10183,        254]
+CellTagsIndexPosition[     10140,        251]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
-  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Input",
- InitializationCell->True,
- CellChangeTimes->{{3.9853649732082024`*^9, 3.98536508446332*^9}},
- CellLabel->"In[36]:=",ExpressionUUID->"b6f43e64-afdc-624d-91dd-09237a92d29f"],
+  RowBox[{"Quit", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9854399468417473`*^9, 3.985439949319893*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"f34536fe-cf48-e848-9313-fd1992d46b39"],
 
 Cell[BoxData[
  RowBox[{
@@ -32,21 +31,205 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.9853432648351974`*^9, 3.985343309519953*^9}, {
   3.985363512363306*^9, 3.9853635142480392`*^9}},
- CellLabel->"In[37]:=",ExpressionUUID->"120e9a67-f117-5442-b999-1c03b753ba0f"],
+ CellLabel->"In[15]:=",ExpressionUUID->"120e9a67-f117-5442-b999-1c03b753ba0f"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"Get", "[", "\"\<RuffiniPackage.wl\>\"", "]"}], ";"}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.985343353914692*^9, 3.985343370994417*^9}},
- CellLabel->"In[38]:=",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31"],
+ CellLabel->"In[16]:=",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"generateInterface", "[", "]"}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.985343372904125*^9, 3.985343386995579*^9}, {
   3.985345117819847*^9, 3.9853451208671913`*^9}},
- CellLabel->"In[39]:=",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e"]
+ CellLabel->"In[17]:=",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e"],
+
+Cell[BoxData[
+ DynamicModuleBox[{Ruffini`Private`polinomioGenerato$$ = 16 - 
+  8 $CellContext`x + $CellContext`x^2, Ruffini`Private`gradoScelto$$ = 2, 
+  Ruffini`Private`seed$$ = 10, Ruffini`Private`seedMessage$$ = "", 
+  Ruffini`Private`inputErrorMessage$$ = "", Ruffini`Private`radice$$ = Null, 
+  Ruffini`Private`polinomioInput$$ = Null, Ruffini`Private`feedbackMessage$$ =
+   Style["In attesa di input utente", 
+   GrayLevel[0.5], 16, Bold], Ruffini`Private`x$$ = $CellContext`x}, 
+  TagBox[GridBox[{
+     {
+      TemplateBox[{
+        TagBox[
+         GridBox[{{
+            StyleBox[
+            "\"Esercizio:\"", StripOnInput -> False, FontWeight -> Bold]}, {
+            InputFieldBox[
+             Dynamic[Ruffini`Private`seed$$], ImageSize -> 50]}, {
+            DynamicBox[
+             ToBoxes[
+              Style[Ruffini`Private`seedMessage$$, 12, Red], StandardForm], 
+             ImageSizeCache -> {0., {0., 5.8828125}}]}}, DefaultBaseStyle -> 
+          "Column", GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
+        TemplateBox[{20}, "Spacer1"], 
+        TagBox[
+         GridBox[{{
+            StyleBox["\"Grado:\"", Bold, StripOnInput -> False]}, {
+            PopupMenuBox[
+             Dynamic[Ruffini`Private`gradoScelto$$], {
+             2 -> "\"Grado 2\"", 3 -> "\"Grado 3\"", 4 -> "\"Grado 4\""}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+          "Column", 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
+        TemplateBox[{20}, "Spacer1"], 
+        ButtonBox[
+        "\"Genera Esercizio\"", ButtonFunction :> 
+         If[Ruffini`Private`seed$$ === Null, Ruffini`Private`seedMessage$$ = 
+           "Seleziona numero esercizio", 
+           If[
+            IntegerQ[Ruffini`Private`seed$$], 
+            SeedRandom[Ruffini`Private`seed$$]; 
+            Ruffini`Private`polinomioGenerato$$ = 
+             Ruffini`Private`generatePolynom[Ruffini`Private`gradoScelto$$]; 
+            Ruffini`Private`polinomioInput$$ = Null; 
+            Ruffini`Private`radice$$ = Null; 
+            Ruffini`Private`feedbackMessage$$ = 
+             Style["In attesa di input utente", Gray, 16, Bold]; 
+            Ruffini`Private`inputErrorMessage$$ = ""; 
+            Ruffini`Private`seedMessage$$ = "", Ruffini`Private`seedMessage$$ = 
+            "Inserire un intero"]], Method -> "Queued", 
+         ImageSize -> {150, 40}, Appearance -> "FramedPalette", Evaluator -> 
+         Automatic], 
+        TemplateBox[{20}, "Spacer1"], 
+        ButtonBox[
+        "\"Verifica Esercizio\"", ButtonFunction :> 
+         Which[Ruffini`Private`polinomioGenerato$$ === "", 
+           Ruffini`Private`feedbackMessage$$ = 
+           Style["Inserire prima il numero dell'esercizio e generarlo ", 
+             Orange, 16, Bold], 
+           Or[
+           Ruffini`Private`radice$$ === Null, 
+            Ruffini`Private`polinomioInput$$ === Null], 
+           Ruffini`Private`inputErrorMessage$$ = 
+            Style["Dati Mancanti", Red, 16]; 
+           Ruffini`Private`feedbackMessage$$ = 
+            Style["In attesa di input utente", Gray, 16, Bold], 
+           Not[
+            IntegerQ[Ruffini`Private`radice$$]], 
+           Ruffini`Private`inputErrorMessage$$ = 
+            Style["La radice deve essere intera", Red, 16, Bold]; 
+           Ruffini`Private`feedbackMessage$$ = 
+            Style["In attesa di input utente", Gray, 16, Bold], 
+           And[
+           Simplify[
+             Ruffini`Private`polinomioInput$$ - 
+              Ruffini`Private`polinomioGenerato$$/(Ruffini`Private`x$$ - 
+              Ruffini`Private`radice$$)] === 0, 
+            ReplaceAll[
+             Ruffini`Private`polinomioGenerato$$, Ruffini`Private`x$$ -> 
+              Ruffini`Private`radice$$] == 0], 
+           Ruffini`Private`inputErrorMessage$$ = ""; 
+           Ruffini`Private`feedbackMessage$$ = 
+            Style["\[Checkmark] Bravissimo/a! Tutto corretto!", Green, 16, 
+              Bold], ReplaceAll[
+            Ruffini`Private`polinomioGenerato$$, Ruffini`Private`x$$ -> 
+             Ruffini`Private`radice$$] == 0, 
+           Ruffini`Private`inputErrorMessage$$ = ""; 
+           Ruffini`Private`feedbackMessage$$ = 
+            Style["La radice \[EGrave] corretta ma non il quoziente", Orange, 
+              16, Bold], True, Ruffini`Private`feedbackMessage$$ = 
+           Style["La radice non \[EGrave] corretta ", Red, 16, Bold]], Method -> 
+         "Queued", ImageSize -> {150, 40}, Appearance -> "FramedPalette", 
+         Evaluator -> Automatic]},
+       "RowDefault"]},
+     {
+      TemplateBox[{10},
+       "Spacer1"]},
+     {
+      PanelBox[
+       DynamicBox[ToBoxes[
+         Style[
+          If[
+          Ruffini`Private`polinomioGenerato$$ === "", "Clicca per generare", 
+           TraditionalForm[Ruffini`Private`polinomioGenerato$$]], 26], 
+         StandardForm],
+        ImageSizeCache->{
+         135.6352676340739, {0.3173828125, 23.534814996272324`}}],
+       Background->GrayLevel[1],
+       FrameMargins->20,
+       ImageSize->All]},
+     {
+      TemplateBox[{10},
+       "Spacer1"]},
+     {
+      TagBox[GridBox[{
+         {
+          TemplateBox[{
+            TagBox[
+             GridBox[{{
+                StyleBox[
+                "\"Inserisci la radice:\"", StripOnInput -> False, FontWeight -> 
+                 Bold]}, {
+                InputFieldBox[
+                 Dynamic[Ruffini`Private`radice$$]]}}, DefaultBaseStyle -> 
+              "Column", GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Column"], 
+            TemplateBox[{20}, "Spacer1"], 
+            TagBox[
+             GridBox[{{
+                StyleBox[
+                "\"Quoziente:\"", StripOnInput -> False, FontWeight -> 
+                 Bold]}, {
+                InputFieldBox[
+                 Dynamic[Ruffini`Private`polinomioInput$$], Expression, 
+                 ImageSize -> 250]}}, DefaultBaseStyle -> "Column", 
+              GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Column"]},
+           "RowDefault"]},
+         {
+          TemplateBox[{20},
+           "Spacer1"]},
+         {
+          
+          DynamicBox[ToBoxes[
+           Ruffini`Private`inputErrorMessage$$, StandardForm],
+           ImageSizeCache->{0., {0., 6.373046875}}]}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{Left}}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Column"]},
+     {
+      TemplateBox[{20},
+       "Spacer1"]},
+     {
+      DynamicBox[ToBoxes[Ruffini`Private`feedbackMessage$$, StandardForm],
+       ImageSizeCache->{219.921875, {3.1015625, 11.359375}}]}
+    },
+    FrameMargins -> 10,
+    DefaultBaseStyle->"Column",
+    FrameStyle->GrayLevel[0.5],
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.985700298949749*^9, 3.985700555457924*^9, 3.9857007103940887`*^9, 
+   3.9857008219507465`*^9, 3.985700853475765*^9, 3.985700897727604*^9, 
+   3.985701126573452*^9, 3.9857015549263344`*^9, {3.9857015972519474`*^9, 
+   3.9857016076728115`*^9}, {3.9857016543775063`*^9, 3.985701665647545*^9}, 
+   3.9857017824251976`*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"3065edf1-57b3-1644-8ade-b34fffe929c8"]
+}, Open  ]]
 },
 WindowSize->{1069, 641},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -70,14 +253,16 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 267, 5, 44, "Input",ExpressionUUID->"b6f43e64-afdc-624d-91dd-09237a92d29f",
+Cell[554, 20, 217, 4, 28, "Input",ExpressionUUID->"f34536fe-cf48-e848-9313-fd1992d46b39"],
+Cell[774, 26, 348, 7, 44, "Input",ExpressionUUID->"120e9a67-f117-5442-b999-1c03b753ba0f",
  InitializationCell->True],
-Cell[824, 27, 348, 7, 44, "Input",ExpressionUUID->"120e9a67-f117-5442-b999-1c03b753ba0f",
+Cell[1125, 35, 270, 5, 44, "Input",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31",
  InitializationCell->True],
-Cell[1175, 36, 270, 5, 44, "Input",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31",
+Cell[CellGroupData[{
+Cell[1420, 44, 288, 5, 44, "Input",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e",
  InitializationCell->True],
-Cell[1448, 43, 288, 5, 44, "Input",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e",
- InitializationCell->True]
+Cell[1711, 51, 7805, 179, 338, "Output",ExpressionUUID->"3065edf1-57b3-1644-8ade-b34fffe929c8"]
+}, Open  ]]
 }
 ]
 *)
