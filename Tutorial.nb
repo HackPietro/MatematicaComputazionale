@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      3304,         90]
-NotebookOptionsPosition[      2175,         61]
-NotebookOutlinePosition[      2868,         83]
-CellTagsIndexPosition[      2825,         80]
+NotebookDataLength[      2921,         79]
+NotebookOptionsPosition[      1918,         53]
+NotebookOutlinePosition[      2611,         75]
+CellTagsIndexPosition[      2568,         72]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -41,8 +41,6 @@ Cell[BoxData[
    3.9858394112806416`*^9, 3.985839510283287*^9},
  CellLabel->"In[2]:=",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"generateInterface", "[", "]"}]], "Input",
  InitializationCell->True,
@@ -51,13 +49,7 @@ Cell[BoxData[
   3.9858394476825924`*^9}, {3.9858395438650208`*^9, 3.985839551111513*^9}, {
   3.9858400202819176`*^9, 3.985840068237137*^9}, {3.9858407095764256`*^9, 
   3.985840710259508*^9}},ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-\
-3d42b87a9d5e"],
-
-Cell[BoxData[
- RowBox[{"Ruffini`generateInterface", "[", "]"}]], "Output",
- CellChangeTimes->{3.9858400818663177`*^9, 3.9858407002415485`*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"0009a126-45a7-884f-ac7a-8c49dde083f4"]
-}, Open  ]]
+3d42b87a9d5e"]
 },
 WindowSize->{574.8, 609.6},
 WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
@@ -87,11 +79,8 @@ Cell[773, 26, 347, 7, 44, "Input",ExpressionUUID->"120e9a67-f117-5442-b999-1c03b
  InitializationCell->True],
 Cell[1123, 35, 319, 6, 44, "Input",ExpressionUUID->"126021ac-1b1e-1d4c-8091-b0c8f1018f31",
  InitializationCell->True],
-Cell[CellGroupData[{
-Cell[1467, 45, 469, 8, 44, "Input",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e",
- InitializationCell->True],
-Cell[1939, 55, 220, 3, 32, "Output",ExpressionUUID->"0009a126-45a7-884f-ac7a-8c49dde083f4"]
-}, Open  ]]
+Cell[1445, 43, 469, 8, 44, "Input",ExpressionUUID->"d246b9f8-d3f3-234d-8d4d-3d42b87a9d5e",
+ InitializationCell->True]
 }
 ]
 *)
