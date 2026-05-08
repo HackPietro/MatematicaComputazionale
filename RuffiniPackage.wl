@@ -1,16 +1,14 @@
 (* ::Package:: *)
 
 (* ::Code:: *)
-(*(*\|01f60eFare l'intestazione del pacchetto , commentare le ausiliarie meglio*)*)
-(**)
 (*(* :Title: RuffiniPackage *)*)
 (*(* :Context: Ruffini` *)*)
 (*(* :Author: Stefano Mercurio Pietro Cimino Mattia Boffa Giovanni Previtera *)*)
-(*(* :Summary:  *)*)
+(*(* :Summary: Il pacchetto lancia un'interfaccia che genera esercizi risolvibili tramite il Teorema di Ruffini e/o discriminante*)*)
 (*(* :Copyright: SM PC MB GP 2026 *)*)
-(*(* :Package Version: 1 *)*)
+(*(* :Package Version: 0.9 *)*)
 (*(* :Mathematica Version: 14 *)*)
-(*(* :History: last modified 01/05/2026 *)*)
+(*(* :History: last modified 08/05/2026 *)*)
 (*(* :Sources:  *)*)
 (*(* :Limitations: educational purposes *)*)
 (*(* :Discussion: *)*)
@@ -632,6 +630,3 @@
 (**)
 (*End[]*)
 (*EndPackage[]*)
-
-
-
