@@ -194,18 +194,18 @@ verifyAnswer[polinomioGenerato_, radice_, polinomioInput_, var_] := Module[{expr
     (* CASO 2: VALIDAZIONE SINTATTICA E STRUTTURALE *)
     (* Verifichiamo tre cose:
        - radice deve essere un intero;
-       - la stringa deve avere una sintassi valida (SyntaxQ);
-       - l'espressione non deve essere fallita e deve essere effettivamente un polinomio (PolynomialQ). *)
-    !IntegerQ[radice] || StringContainsQ[polinomioInput,"="],
+       - l'espressione non deve essere fallita e deve essere effettivamente un polinomio nella variabile (var). *)
+    !IntegerQ[radice] || StringContainsQ[polinomioInput,"="] || StringContainsQ[polinomioInput,";"] || !StringContainsQ[polinomioInput,ToString[var]],
     {"badRoot", Style["\|01f923\|01f923\|01f923 Abbiamo un simpaticone qui!!! Controlla il formato degli input", Red, 16, Bold]},
     
-    (expr = Quiet[ToExpression[polinomioInput]]; expr === $Failed),
+    (* Mathematica contolla anche le condizioni successiva ad un true in una sequenza di "or" *)
+    (expr = Quiet[ToExpression[polinomioInput]]; (expr === $Failed || !PolynomialQ[expr, var])),
     {"badRoot", Style["\|01f923\|01f923\|01f923 Abbiamo un simpaticone qui!!! Controlla il formato degli input", Red, 16, Bold]},
 
     (* CASO 3: RISPOSTA CORRETTA *)
     (* Verifichiamo che:
        - (polinomioInput) - (polinomioGenerato / (var - radice)) sia uguale a zero;
-       - Il polinomio originale sia divisibile per (var - radice) (teorema del resto). *)
+       - Il polinomio originale sia divisibile per (var - radice). *)
     Simplify[expr - (polinomioGenerato/(var - radice))] === 0 && (polinomioGenerato /. var -> radice) == 0,
     {"correct", Style["Ottimo! Procediamo col prossimo step \|01f44d", Green, 16, Bold]},
 
@@ -472,7 +472,6 @@ Panel[
         "" (* se non c'e' ancora nulla, non mostra niente *)
       ]
     ],
-    Spacer[0.2],
 
     Style["Storico Passaggi:", Bold, 13, RGBColor[0.18, 0.32, 0.55]],
     
@@ -542,7 +541,7 @@ Dynamic[
   }, Alignment -> Center],
   WindowTitle -> "Tabella di Ruffini", (*Titolo della finestra del pop up*)
   WindowSize -> All, (*Dimensione della tabella nel pop up*)
-  Modal->True
+  Modal->True (* Non rende possibile operare sull'interfaccia fino alla chiusura del pop up*)
 ],
       Method -> "Queued", Appearance -> "Frameless"
     ],
@@ -585,7 +584,7 @@ Panel[
               ],
               polinomioInput = polinomioInput <> "^",
               (* <> concatena il simbolo "^" alla fine del testo gia' presente nel campo *)
-              Appearance -> "Frameless"
+              Appearance -> "Frameless" (* Rimuove i bordi del frame *)
             ]
           }]
         }],
