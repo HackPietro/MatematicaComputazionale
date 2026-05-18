@@ -545,7 +545,7 @@ Dynamic[
 ],
       Method -> "Queued", Appearance -> "Frameless"
     ],
-    Invisible[Button["placeholder", Null, ImageSize -> {210, 42}]] (*Caso di tabella non presenta, bottone non mostrato*)
+    Invisible[Button["placeholder", Null]] (*Caso di tabella non presenta, bottone non mostrato*)
   ]
 ]
 
